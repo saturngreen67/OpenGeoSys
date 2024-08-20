@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--units: kg, m, s, K and derived units: N, Pa=N/m^2 -->
+<OpenGeoSysProject>
+    <meshes>
+        <mesh>1-T3-f_domain.vtu</mesh>
+		<mesh>1-T3-f_physical_group_bottom.vtu</mesh>
+		<mesh>1-T3-f_physical_group_top.vtu</mesh>
+    </meshes>
+    <processes>
+        <process>
+            <name>HeatConduction</name>
+            <type>HEAT_CONDUCTION</type>
+            <integration_order>2</integration_order>
+            <process_variables>
+                <process_variable>temperature</process_variable>
+            </process_variables>
+        </process>
+    </processes>
+    <media>
+        <medium id="2">
+           <phases>
+                <phase>
+                    <!-- Pore water phase -->
+                    <type>AqueousLiquid</type>
+                    <properties>
+                        <property>
+                            <name>thermal_conductivity</name>
+                            <type>Constant</type>
+                            <value>0.6</value> <!-- W/m/K -->
+                        </property>
+                        <property>
+                            <name>specific_heat_capacity</name>
+                            <type>Constant</type>
+                            <value>4190</value> <!-- J/kg/K -->
+                        </property>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>998</value> <!-- kg/m^3 -->
+                        </property>
+                    </properties>
+                </phase>
+                <phase>
+                    <!-- Porous solid phase -->
+                    <type>Solid</type>
+                    <properties>
+                        <property>
+                            <name>thermal_conductivity</name>
+                            <type>Constant</type>
+                            <value>2.53</value> <!-- W/m/K -->
+                        </property>
+                        <property>
+                            <name>specific_heat_capacity</name>
+                            <type>Constant</type>
+                            <value>910</value> <!-- J/kg/K -->
+                        </property>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>2650</value> <!-- kg/m^3 -->
+                        </property>
+                    </properties>
+                </phase>
+            </phases>
+
+            <properties>
+                <property>
+                    <name>porosity</name>
+                    <type>Constant</type>
+                    <value>0.05</value>
+                </property>
+                <property>
+                    <name>density</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>thermal_conductivity</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>specific_heat_capacity</name>
+                    <type>VolumeFractionAverage</type>
+                    <!-- Other options: EffectiveThermalConductivityPorosityMixing, Constant  -->
+                </property>
+            </properties>
+
+        </medium>
+
+
+        <medium id="0">
+           <phases>
+                <phase>
+                    <!-- Pore water phase -->
+                    <type>AqueousLiquid</type>
+                    <properties>
+                        <property>
+                            <name>thermal_conductivity</name>
+                            <type>Constant</type>
+                            <value>0.57</value> <!-- W/m/K -->
+                        </property>
+                        <property>
+                            <name>specific_heat_capacity</name>
+                            <type>Constant</type>
+                            <value>3110</value> <!-- J/kg/K -->
+                        </property>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>1202</value> <!-- kg/m^3 -->
+                        </property>
+                    </properties>
+                </phase>
+                <phase>
+                    <!-- Porous solid phase -->
+                    <type>Solid</type>
+                    <properties>
+                        <property>
+                            <name>thermal_conductivity</name>
+                            <type>Constant</type>
+                            <value>6.5</value> <!-- W/m/K -->
+                        </property>
+                        <property>
+                            <name>specific_heat_capacity</name>
+                            <type>Constant</type>
+                            <value>1940</value> <!-- J/kg/K -->
+                        </property>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>2170</value> <!-- kg/m^3 -->
+                        </property>
+                    </properties>
+                </phase>
+            </phases>
+
+            <properties>
+                <property>
+                    <name>porosity</name>
+                    <type>Constant</type>
+                    <value>0.003</value>
+                </property>
+                <property>
+                    <name>density</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>thermal_conductivity</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>specific_heat_capacity</name>
+                    <type>VolumeFractionAverage</type>
+                    <!-- Other options: EffectiveThermalConductivityPorosityMixing, Constant  -->
+                </property>
+            </properties>
+        </medium>
+
+
+        <medium id="1">
+           <phases>
+                <phase>
+                    <!-- Pore water phase -->
+                    <type>AqueousLiquid</type>
+                    <properties>
+                        <property>
+                            <name>thermal_conductivity</name>
+                            <type>Constant</type>
+                            <value>0.57</value> <!-- W/m/K -->
+                        </property>
+                        <property>
+                            <name>specific_heat_capacity</name>
+                            <type>Constant</type>
+                            <value>2979.78</value> <!-- J/kg/K -->
+                        </property>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>1202</value> <!-- kg/m^3 -->
+                        </property>
+                    </properties>
+                </phase>
+                <phase>
+                    <!-- Porous solid phase -->
+                    <type>Solid</type>
+                    <properties>
+                        <property>
+                            <name>thermal_conductivity</name>
+                            <type>Constant</type>
+                            <value>0.6</value> <!-- W/m/K -->
+                        </property>
+                        <property>
+                            <name>specific_heat_capacity</name>
+                            <type>Constant</type>
+                            <value>1940</value> <!-- J/kg/K -->
+                        </property>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>2170</value> <!-- kg/m^3 -->
+                        </property>
+                    </properties>
+                </phase>
+            </phases>
+
+            <properties>
+                <property>
+                    <name>porosity</name>
+                    <type>Constant</type>
+                    <value>0.99</value>
+                </property>
+                <property>
+                    <name>density</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>thermal_conductivity</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>specific_heat_capacity</name>
+                    <type>VolumeFractionAverage</type>
+                    <!-- Other options: EffectiveThermalConductivityPorosityMixing, Constant  -->
+                </property>
+            </properties>
+        </medium>
+
+    </media>
+
+
+    <parameters>
+        <parameter>
+            <name>T0</name>
+            <type>Constant</type>
+            <value>20</value>
+        </parameter>
+
+        <parameter>
+            <name>T_top</name>
+            <type>Constant</type>
+            <value>10</value>
+
+        </parameter>
+        <parameter>
+            <name>T_bottom</name>
+            <type>Constant</type>
+            <value>0.1</value>
+        </parameter>
+    </parameters>
+
+    <process_variables>
+        <process_variable>
+            <name>temperature</name>
+            <components>1</components>
+            <order>1</order>
+            <initial_condition>T0</initial_condition>
+            <boundary_conditions>
+                <boundary_condition>
+                    <mesh>1-T3-f_physical_group_top</mesh>
+                    <type>Dirichlet</type>
+                    <parameter>T_top</parameter>
+                </boundary_condition>
+                <boundary_condition>
+                    <mesh>1-T3-f_physical_group_bottom</mesh>
+                    <type>Neumann</type><!-- Other option: Neumann -->
+                    <parameter>T_bottom</parameter>
+                </boundary_condition>
+            </boundary_conditions>
+        </process_variable>
+    </process_variables>
+
+    <time_loop>
+        <processes>
+            <process ref="HeatConduction">
+                <nonlinear_solver>newton</nonlinear_solver> <!-- Agar esm dar block "non-linear solver" avaz shod inja ham bayad avaz konim -->
+                <convergence_criterion>
+                    <type>DeltaX</type> <!-- Other options:PerComponentDeltaX -->
+                    <norm_type>NORM2</norm_type>
+                    <abstol>1.e-8</abstol> <!-- Other options:1.e-6 -->
+                </convergence_criterion>
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
+                <time_stepping>
+                    <type>FixedTimeStepping</type> <!-- Other options:SingleStep (dar in soorat nizai be t_initial v at_end nist --> 
+                    <t_initial>0.0</t_initial>
+                    <t_end>2e13</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1000</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>10000</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>50000</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e5</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>20</repeat>
+                            <delta_t>5e5</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e6</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e6</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e7</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e7</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e8</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e8</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e9</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e9</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e10</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e10</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e11</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>20</repeat>
+                            <delta_t>5e11</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
+            </process>
+        </processes>
+
+        <output>
+            <type>VTK</type>
+            <prefix>T1_test1</prefix> <!-- Khodam taghir dadam -->
+            <timesteps>
+                <pair>
+                    <repeat>10000</repeat>
+                    <each_steps>100000</each_steps> <!--  Khodam taghir dadam -->
+                </pair>
+            </timesteps>
+            <variables>
+                <variable> temperature </variable>
+            </variables>
+            <suffix>_ts_{:timestep}_t_{:gtime}_sec</suffix>
+            <fixed_output_times>
+                10000
+                110000
+                610000
+                1610000
+                6610000
+                16610000
+                66610000
+                166610000
+                666610000
+                1666610000
+                6666610000
+                7666610000
+                57666610000
+                157666610000
+                657666610000
+                1657666610000
+                11657666610000
+            </fixed_output_times>
+        </output>
+    </time_loop>
+
+    <nonlinear_solvers>
+        <nonlinear_solver>
+            <name>newton</name>
+            <type>Newton</type> <!--  other options: Newton -->
+            <max_iter>200</max_iter>
+            <linear_solver>general_linear_solver</linear_solver>
+        </nonlinear_solver>
+    </nonlinear_solvers>
+    <linear_solvers>
+        <linear_solver>
+            <name>general_linear_solver</name>
+            <eigen>
+                <solver_type>BiCGSTAB</solver_type> <!--  other options: CG, BiCGSTAB  -->
+                <max_iteration_step>10000</max_iteration_step>
+                <error_tolerance>1e-16</error_tolerance>
+                <precon_type>DIAGONAL</precon_type> <!--  other options: "Mishavad hazf kard", DIAGONAL, ILUT (Dar in halat dar khate baad baya ezafe konim:<error_tolerance>1e-8</error_tolerance> va hamchenin <max_iteration_step>1000</max_iteration_step>)-->
+            </eigen>
+        </linear_solver>
+    </linear_solvers>
+</OpenGeoSysProject>
