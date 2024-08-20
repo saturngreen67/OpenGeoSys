@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--units: kg, m, s, K and derived units: N, Pa=N/m^2 -->
+<OpenGeoSysProject>
+    <meshes>
+        <mesh>1-T3-f_domain.vtu</mesh>
+		<mesh>1-T3-f_physical_group_top.vtu</mesh>
+    </meshes>
+    <processes>
+        <process>
+            <name>LiquidFlow</name>
+            <type>LIQUID_FLOW</type> <!--Other option: "LiquidFlow". In that case we add "storage" as "final property"" -->
+            <integration_order>2</integration_order>
+            <process_variables>
+                <process_variable>pressure</process_variable>
+            </process_variables>
+            <specific_body_force>0 0 -9.81</specific_body_force>
+        </process>
+    </processes>
+    <media>
+        <medium id="2">
+        <!-- Sandstone properties -->
+           <phases>
+                <phase>
+                    <!-- Pore water phase -->
+                    <type>AqueousLiquid</type>
+                    <properties>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>998</value>
+                        </property>
+                        <property>
+                            <name>viscosity</name>
+                            <type>Constant</type>
+                            <value>0.0009</value>
+                        </property>
+                    </properties>
+                </phase>
+                <phase>
+                    <!-- Porous solid phase -->
+                    <type>Solid</type>
+                    <properties>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>2650</value>
+                        </property>
+                        <property>
+                            <name>viscosity</name>
+                            <type>Constant</type>
+                            <value>0</value>
+                        </property>
+                    </properties>
+                </phase>
+            </phases>
+
+            <properties>
+                <property>
+                    <name>porosity</name>
+                    <type>Constant</type>
+                    <value>0.05</value>
+                </property>
+                <property>
+                    <name>permeability</name>
+                    <type>Constant</type>
+                    <value>1.42e-15</value>
+                </property>
+                <property>
+                    <name>density</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>reference_temperature</name>
+                    <type>Constant</type>
+                    <value>293.15</value>
+                </property>
+                <property>
+                    <name>storage</name><!-- Or maybe: 8.05e-10 -->
+                    <type>Constant</type>
+                    <value>1e-7</value>
+                </property>
+
+            </properties>
+
+
+        </medium>
+
+
+        <medium id="0">
+        <!-- Lower Salt properties -->
+           <phases>
+                <phase>
+                    <!-- Pore water phase -->
+                    <type>AqueousLiquid</type>
+                    <properties>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>1202</value>
+                        </property>
+                        <property>
+                            <name>viscosity</name>
+                            <type>Constant</type>
+                            <value>0.0012</value>
+                        </property>
+                    </properties>
+                </phase>
+                <phase>
+                    <!-- Porous solid phase -->
+                    <type>Solid</type>
+                    <properties>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>2170</value>
+                        </property>
+                        <property>
+                            <name>viscosity</name>
+                            <type>Constant</type>
+                            <value>0</value>
+                        </property>
+                    </properties>
+                </phase>
+            </phases>
+
+            <properties>
+                <property>
+                    <name>porosity</name>
+                    <type>Constant</type>
+                    <value>0.003</value>
+                </property>
+                <property>
+                    <name>density</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>permeability</name>
+                    <type>Constant</type>
+                    <value>1e-20</value>
+                </property>
+                <property>
+                    <name>reference_temperature</name>
+                    <type>Constant</type>
+                    <value>293.15</value>
+                </property>
+                <property>
+                    <name>storage</name><!-- Or maybe: 8.05e-10 -->
+                    <type>Constant</type>
+                    <value>1e-16</value>
+                </property>
+
+            </properties>
+
+        </medium>
+
+
+        <medium id="1">
+        <!-- Salt Cavern properties -->
+           <phases>
+                <phase>
+                    <!-- Pore water phase -->
+                    <type>AqueousLiquid</type>
+                    <properties>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>1202</value>
+                        </property>
+                        <property>
+                            <name>viscosity</name>
+                            <type>Constant</type>
+                            <value>0.001313</value>
+                        </property>
+                    </properties>
+                </phase>
+                <phase>
+                    <!-- Porous solid phase -->
+                    <type>Solid</type>
+                    <properties>
+                        <property>
+                            <name>density</name>
+                            <type>Constant</type>
+                            <value>2170</value>
+                        </property>
+                        <property>
+                            <name>viscosity</name>
+                            <type>Constant</type>
+                            <value>0.0012</value>
+                        </property>
+                    </properties>
+                </phase>
+            </phases>
+
+            <properties>
+                <property>
+                    <name>porosity</name>
+                    <type>Constant</type>
+                    <value>0.99</value>
+                </property>
+                <property>
+                    <name>density</name>
+                    <type>VolumeFractionAverage</type>
+                </property>
+                <property>
+                    <name>permeability</name>
+                    <type>Constant</type>
+                    <value>9.869233e-9</value>
+                </property>
+                <property>
+                    <name>reference_temperature</name>
+                    <type>Constant</type>
+                    <value>293.15</value>
+                </property>
+                <property>
+                    <name>storage</name><!-- Or maybe: 8.05e-10 -->
+                    <type>Constant</type>
+                    <value>0.98</value>
+                </property>
+
+            </properties>
+
+        </medium>
+
+    </media>
+
+
+    <parameters>
+        <parameter>
+            <name>P0</name>
+            <type>Constant</type>
+            <value>16207738.56</value>
+        </parameter>
+
+        <parameter>
+            <name>P_top</name>
+            <type>Constant</type>
+            <value>0</value>
+
+        </parameter>
+    </parameters>
+
+    <process_variables>
+        <process_variable>
+            <name>pressure</name>
+            <components>1</components>
+            <order>1</order>
+            <initial_condition>P0</initial_condition>
+            <boundary_conditions>
+                <boundary_condition>
+                    <mesh>1-T3-f_physical_group_top</mesh>
+                    <type>Dirichlet</type>
+                    <parameter>P_top</parameter>
+                </boundary_condition>
+            </boundary_conditions>
+        </process_variable>
+    </process_variables>
+
+    <time_loop>
+        <processes>
+            <process ref="LiquidFlow">
+                <nonlinear_solver>basic_picard</nonlinear_solver> <!-- Agar esm dar block "non-linear solver" avaz shod inja ham bayad avaz konim -->
+                <convergence_criterion>
+                    <type>DeltaX</type> <!-- Other options:PerComponentDeltaX -->
+                    <norm_type>NORM2</norm_type>
+                    <abstol>1.e-8</abstol> <!-- Other options:1.e-6 -->
+                </convergence_criterion>
+                <time_discretization>
+                    <type>BackwardEuler</type>
+                </time_discretization>
+                <time_stepping>
+                    <type>FixedTimeStepping</type> <!-- Other options:SingleStep (dar in soorat nizai be t_initial v at_end nist --> 
+                    <t_initial>0.0</t_initial>
+                    <t_end>2e13</t_end>
+                    <timesteps>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1000</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>10000</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>50000</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e5</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>20</repeat>
+                            <delta_t>5e5</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e6</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e6</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e7</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e7</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e8</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e8</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e9</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e9</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e10</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>5e10</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>10</repeat>
+                            <delta_t>1e11</delta_t>
+                        </pair>
+                        <pair>
+                            <repeat>20</repeat>
+                            <delta_t>5e11</delta_t>
+                        </pair>
+                    </timesteps>
+                </time_stepping>
+
+            </process>
+        </processes>
+
+        <output>
+            <type>VTK</type>
+            <prefix>P_S</prefix> <!-- Khodam taghir dadam -->
+            <variables>
+                <variable> pressure </variable>
+            </variables>
+            <suffix>_ts_{:timestep}_t_{:gtime}_sec</suffix>
+            <fixed_output_times>
+                10000
+                110000
+                610000
+                1610000
+                6610000
+                16610000
+                66610000
+                166610000
+                666610000
+                1666610000
+                6666610000
+                7666610000
+                57666610000
+                157666610000
+                657666610000
+                1657666610000
+                11657666610000
+            </fixed_output_times>
+        </output>
+    </time_loop>
+
+    <nonlinear_solvers>
+        <nonlinear_solver>
+            <name>basic_picard</name>
+            <type>Picard</type> <!--  other options: Newton -->
+            <max_iter>1000</max_iter>
+            <linear_solver>general_linear_solver</linear_solver>
+        </nonlinear_solver>
+    </nonlinear_solvers>
+    <linear_solvers>
+        <linear_solver>
+            <name>general_linear_solver</name>
+            <lis>-i bcgs -p jacobi -tol 1e-14 -maxiter 500</lis>
+            <eigen>
+                <solver_type>CG</solver_type>
+                <precon_type>DIAGONAL</precon_type>
+                <max_iteration_step>10050000</max_iteration_step>
+                <error_tolerance>1e-14</error_tolerance>
+            </eigen>
+            <petsc>
+                <prefix>lf</prefix>
+                <parameters>-lf_ksp_type bcgs -lf_pc_type bjacobi -lf_ksp_rtol 1e-10 -lf_ksp_max_it 500</parameters>
+            </petsc>
+        </linear_solver>
+    </linear_solvers>
+
+</OpenGeoSysProject>
