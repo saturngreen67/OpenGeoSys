@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet timestep="0" group="" part="0" file="3D_deep_BHE_CXA_ts_0_t_0.000000.vtu"/>
+    <DataSet timestep="305" group="" part="0" file="3D_deep_BHE_CXA_ts_10_t_305.000000.vtu"/>
+    <DataSet timestep="1205" group="" part="0" file="3D_deep_BHE_CXA_ts_20_t_1205.000000.vtu"/>
+    <DataSet timestep="2555" group="" part="0" file="3D_deep_BHE_CXA_ts_30_t_2555.000000.vtu"/>
+    <DataSet timestep="4405" group="" part="0" file="3D_deep_BHE_CXA_ts_40_t_4405.000000.vtu"/>
+    <DataSet timestep="7155" group="" part="0" file="3D_deep_BHE_CXA_ts_50_t_7155.000000.vtu"/>
+    <DataSet timestep="11655" group="" part="0" file="3D_deep_BHE_CXA_ts_60_t_11655.000000.vtu"/>
+    <DataSet timestep="18155" group="" part="0" file="3D_deep_BHE_CXA_ts_70_t_18155.000000.vtu"/>
+    <DataSet timestep="26655" group="" part="0" file="3D_deep_BHE_CXA_ts_80_t_26655.000000.vtu"/>
+    <DataSet timestep="39155" group="" part="0" file="3D_deep_BHE_CXA_ts_90_t_39155.000000.vtu"/>
+    <DataSet timestep="61655" group="" part="0" file="3D_deep_BHE_CXA_ts_100_t_61655.000000.vtu"/>
+    <DataSet timestep="94155" group="" part="0" file="3D_deep_BHE_CXA_ts_110_t_94155.000000.vtu"/>
+    <DataSet timestep="136655" group="" part="0" file="3D_deep_BHE_CXA_ts_120_t_136655.000000.vtu"/>
+    <DataSet timestep="191655" group="" part="0" file="3D_deep_BHE_CXA_ts_130_t_191655.000000.vtu"/>
+    <DataSet timestep="266655" group="" part="0" file="3D_deep_BHE_CXA_ts_140_t_266655.000000.vtu"/>
+    <DataSet timestep="361655" group="" part="0" file="3D_deep_BHE_CXA_ts_150_t_361655.000000.vtu"/>
+    <DataSet timestep="536655" group="" part="0" file="3D_deep_BHE_CXA_ts_160_t_536655.000000.vtu"/>
+    <DataSet timestep="811655" group="" part="0" file="3D_deep_BHE_CXA_ts_170_t_811655.000000.vtu"/>
+    <DataSet timestep="1201655" group="" part="0" file="3D_deep_BHE_CXA_ts_180_t_1201655.000000.vtu"/>
+    <DataSet timestep="1861655" group="" part="0" file="3D_deep_BHE_CXA_ts_190_t_1861655.000000.vtu"/>
+    <DataSet timestep="2801655" group="" part="0" file="3D_deep_BHE_CXA_ts_200_t_2801655.000000.vtu"/>
+    <DataSet timestep="4151655" group="" part="0" file="3D_deep_BHE_CXA_ts_210_t_4151655.000000.vtu"/>
+    <DataSet timestep="5901655" group="" part="0" file="3D_deep_BHE_CXA_ts_220_t_5901655.000000.vtu"/>
+    <DataSet timestep="8051655" group="" part="0" file="3D_deep_BHE_CXA_ts_230_t_8051655.000000.vtu"/>
+    <DataSet timestep="10551655" group="" part="0" file="3D_deep_BHE_CXA_ts_240_t_10551655.000000.vtu"/>
+    <DataSet timestep="13451655" group="" part="0" file="3D_deep_BHE_CXA_ts_250_t_13451655.000000.vtu"/>
+    <DataSet timestep="15552000" group="" part="0" file="3D_deep_BHE_CXA_ts_258_t_15552000.000000.vtu"/>
+  </Collection>
+</VTKFile>
